@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Per-tenant brand colors, overridden at runtime via an inline style on
+     <html> in app/(public)/layout.tsx and app/admin/layout.tsx from the
+     site_branding row. Defaults here are Vaishnavi IAS Academy's navy/gold. */
+  --brand-primary: #0b1f4d;
+  --brand-accent: #c9a227;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-accent: var(--brand-accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
