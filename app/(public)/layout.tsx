@@ -14,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${site.name}`,
     },
     description: branding?.seo_default_desc || branding?.tagline || undefined,
+    icons: branding?.favicon_url ? { icon: branding.favicon_url } : undefined,
   };
 }
 

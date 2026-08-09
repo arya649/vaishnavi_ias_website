@@ -85,10 +85,10 @@ async function main() {
       type: "hero",
       position: 0,
       content: {
-        heading:
-          "Vaishnavi IAS Academy offers structured UPSC preparation — expert-led classes, exam-standard test series, and personalized mentorship that keeps you on track from day one to the interview.",
+        heading: "Right Path to Achieve",
         highlight_line: "We are guiding the misguided students to a right path.",
-        subheading: "",
+        subheading:
+          "Vaishnavi IAS Academy offers structured UPSC preparation — expert-led classes, exam-standard test series, and personalized mentorship that keeps you on track from day one to the interview.",
         cta_label: "Enquire Now",
         cta_href: "/contact",
       },
