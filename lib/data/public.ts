@@ -121,6 +121,32 @@ export async function getFaqItems() {
   return data ?? [];
 }
 
+// The site-wide announcement ribbon (rendered above the nav bar on every
+// page, see app/(public)/layout.tsx). Still edited by the admin as a
+// `promo_strip` section on the Home page — this just reads it independent
+// of which page it's attached to, so there's exactly one editing surface.
+export async function getSiteWidePromoStrip() {
+  const { site } = await getCurrentSite();
+  const supabase = await createClient();
+  const { data: pages } = await supabase.from("pages").select("id").eq("site_id", site.id);
+  if (!pages?.length) return null;
+
+  const { data } = await supabase
+    .from("sections")
+    .select("*")
+    .in(
+      "page_id",
+      pages.map((p) => p.id)
+    )
+    .eq("type", "promo_strip")
+    .eq("is_visible", true)
+    .order("updated_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  return data;
+}
+
 export async function getResources() {
   const { site } = await getCurrentSite();
   const supabase = await createClient();

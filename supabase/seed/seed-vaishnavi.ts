@@ -55,7 +55,7 @@ async function main() {
     { slug: "home", title: "Home" },
     { slug: "about", title: "About" },
     { slug: "mentorship-program", title: "Mentorship Program" },
-    { slug: "state-pcs", title: "State PCS" },
+    { slug: "state-pcs", title: "State PSC" },
     { slug: "privacy-policy", title: "Privacy Policy" },
     { slug: "terms-and-conditions", title: "Terms & Conditions" },
     { slug: "refund-and-cancellation", title: "Refund & Cancellation" },
@@ -98,9 +98,9 @@ async function main() {
       position: 1,
       content: {
         badges: [
-          "India's Premier UPSC Mentorship Platform",
           "India's First Chapterwise Structured Test Series",
           "India's Affordable UPSC Platform",
+          "India's Premier UPSC Mentorship Platform",
         ],
       },
     },
@@ -180,8 +180,8 @@ async function main() {
       type: "rich_text",
       position: 0,
       content: {
-        heading: "State PCS",
-        body_markdown: "Coverage for State PCS exams. Content coming soon.",
+        heading: "State PSC",
+        body_markdown: "Coverage for State PSC exams. Content coming soon.",
       },
     },
   ]);
@@ -207,7 +207,8 @@ async function main() {
       { label: "Current Affairs", href: "/current-affairs" },
       { label: "Test Series", href: "/test-series" },
       { label: "Mentorship Program", href: "/mentorship-program" },
-      { label: "State PCS", href: "/state-pcs" },
+      { label: "State PSC", href: "/state-pcs" },
+      { label: "FAQ", href: "/faq" },
       { label: "Resources", href: "/resources" },
       { label: "Pricing", href: "/pricing" },
       { label: "About", href: "/about" },

@@ -21,10 +21,10 @@ export default function NavBar({
   return (
     <header className="sticky top-0 z-30 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 py-1">
           {logoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logoUrl} alt={siteName} className="h-10 w-auto" />
+            <img src={logoUrl} alt={siteName} className="h-16 w-auto sm:h-20" />
           ) : (
             <span className="text-lg font-bold text-brand-primary">{siteName}</span>
           )}

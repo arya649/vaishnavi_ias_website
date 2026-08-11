@@ -16,9 +16,14 @@ export default async function HomePage() {
     getCurrentAffairsPosts(),
   ]);
 
+  // promo_strip is rendered site-wide above the nav bar (see
+  // app/(public)/layout.tsx) even though it's still edited here as a Home
+  // page section, so it's excluded from the normal in-page flow.
+  const sections = pageData?.sections.filter((s) => s.type !== "promo_strip") ?? [];
+
   return (
     <>
-      {pageData && <SectionRenderer sections={pageData.sections} />}
+      {pageData && <SectionRenderer sections={sections} />}
 
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="text-2xl font-bold text-brand-primary sm:text-3xl">Testimonials</h2>
