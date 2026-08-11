@@ -21,13 +21,17 @@ export default function NavBar({
   return (
     <header className="sticky top-0 z-30 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <Link href="/" className="flex items-center gap-2 py-1">
-          {logoUrl ? (
+        <Link href="/" className="flex items-center gap-3 py-1">
+          {logoUrl && (
+            // The logo artwork bakes the wordmark into the image itself, which
+            // gets illegible at nav-bar height; the text label alongside it
+            // (below) is what stays crisp and readable regardless of scale.
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logoUrl} alt={siteName} className="h-16 w-auto sm:h-20" />
-          ) : (
-            <span className="text-lg font-bold text-brand-primary">{siteName}</span>
+            <img src={logoUrl} alt={siteName} className="h-20 w-auto sm:h-24" />
           )}
+          <span className="text-xl font-bold leading-tight text-brand-primary sm:text-2xl">
+            {siteName}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
